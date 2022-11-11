@@ -11,23 +11,22 @@ library(shiny)
 library(plotly)
 
 # Define UI for application that draws a histogram
-shinyUI(fluidPage(
+shinyUI(pageWithSidebar(
   
   # Application title
   titlePanel("Blood Storage Data"),
-  
+
   sidebarLayout(
-    sidebarPanel(
-      radioButtons(inputId = "radio_button1",
-                   label = "RBC Age Group",
-                   choices = c("≤ 13 days (Younger)" , "13 - 18 days(Middle)", "≥ 18 days (Older)"),
-                   selected = "≤ 13 days (Younger)"),
-      radioButtons(inputId = "radio_button2",
-                   label = "Age Group",
-                   choiceNames = c("30-49" , "50-59", "60-69", "70-79"),
-                   choiceValues = c("1", "2", "3", "4"),
-                   selected = "1"),
-      sliderInput("numbin", "Number of bins:", min = 5, max = 50, value = 25)
+    sidebarPanel(inputId = "radio_button1",
+                 label = "RBC Age Group",
+                 choices = c("≤ 13 days (Younger)" , "13 - 18 days(Middle)", "≥ 18 days (Older)"),
+                 selected = "≤ 13 days (Younger)"),
+    radioButtons(inputId = "radio_button2",
+                 label = "Age Group",
+                 choiceNames = c("30-49" , "50-59", "60-69", "70-79"),
+                 choiceValues = c("30-49", "50-59", "60-69", "70-79"),
+                 selected = "30-49"),
+    sliderInput("numbin", "Number of bins:", min = 5, max = 50, value = 25)
     ),
     
     # Show a plot of the generated distribution
@@ -37,4 +36,4 @@ shinyUI(fluidPage(
       plotlyOutput("histgram")
     )
   )
-))
+)

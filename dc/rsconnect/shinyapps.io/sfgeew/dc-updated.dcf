@@ -1,0 +1,13 @@
+name: dc-updated
+title: dc-updated
+username:
+account: sfgeew
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7600269
+bundleId: 6503550
+url: https://sfgeew.shinyapps.io/dc-updated/
+when: 1668186707.28242
+lastSyncTime: 1668186707.28244
+asMultiple: FALSE
+asStatic: FALSE
